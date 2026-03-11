@@ -1,0 +1,18 @@
+{
+  "batch": "data_final",
+  "best_cv_means": {
+    "accuracy": 0.7633333333333334,
+    "balanced_accuracy": 0.5308860366956671,
+    "f1": 0.8614243263183445,
+    "precision": 0.7964521709144134,
+    "recall": 0.938387458006719
+  },
+  "best_search_score": 0.8614243263183445,
+  "model_params": {
+    "n_neighbors": 5,
+    "p": 1,
+    "weights": "uniform"
+  },
+  "model_type": "knn",
+  "refit_metric": "f1"
+}

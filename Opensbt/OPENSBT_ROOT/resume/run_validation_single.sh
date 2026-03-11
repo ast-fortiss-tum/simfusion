@@ -1,0 +1,16 @@
+python -m resume.resume_validation_lofis \
+  --root ./results_wandb \
+  --project "lofi-validation" \
+  --entity "lofi-hifi" \
+  --simulate_function "beamng" \
+  --sim_rerun hifi \
+  --sim_original lofi \
+  --rerun_only_critical \
+  --n_rerun 1 \
+  --only_if_no_hifi \
+  --seeds 17 \
+  --ratio 25 \
+  --save_folder "/home/user/testing/topic1-opensbt-aw/results_wandb/LoFi_GA_pop10_t06_00_00_seed17/j4ewzhde" \
+  --problem_name "LoFi_GA_pop10_t06_00_00_seed17" \
+  --filter_goal_threshold 2 \
+  --filter_obstacle_distance 0.5

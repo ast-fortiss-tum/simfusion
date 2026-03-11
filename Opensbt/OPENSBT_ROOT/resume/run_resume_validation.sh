@@ -1,0 +1,12 @@
+python -m resume.resume_validation \
+    --simulate_function "beamng" \
+    --save_folder "./results_wandb/results_folder_v3" \
+    --project planer_final \
+    --entity lofi-hifi \
+    --run_id msjldi4o \
+    --sim_rerun hifi \
+    --sim_original lofi \
+    --rerun_only_critical \
+    --n_rerun 1 \
+    --only_if_no_hifi \
+    --only_rerun_folder

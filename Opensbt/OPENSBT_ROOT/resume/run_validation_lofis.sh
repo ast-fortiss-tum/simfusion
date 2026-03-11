@@ -1,0 +1,14 @@
+python -m resume.resume_validation_lofis \
+  --root ./results_wandb \
+  --project "lofi-validation" \
+  --entity "lofi-hifi" \
+  --simulate_function "beamng" \
+  --sim_rerun hifi \
+  --sim_original lofi \
+  --rerun_only_critical \
+  --n_rerun 1 \
+  --only_if_no_hifi \
+  --seeds 10 \
+  --ratio 25 \
+  --filter_goal_threshold 2 \
+  --filter_obstacle_distance 0.5

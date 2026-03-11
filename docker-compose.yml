@@ -1,0 +1,131 @@
+version: '3.1'
+services:
+  autoware_mini_lofi:
+    stdin_open: true
+    command:
+      - "bash"
+      - "-c"
+      - >
+        source /opt/catkin_ws/devel/setup.bash &&
+        roslaunch autoware_mini start_sim.launch tfl_detector:=mqtt  map_name:=Town01
+    build:
+      context: ${PWD}/autoware_mini
+      dockerfile: AUTOWARE_MINI/Dockerfile
+      args: 
+          - PROCESS_COUNT=${PROCESS_COUNT}
+          - DISPLAY=${DISPLAY}
+          - QT_X11_NO_MITSHM=1
+          - NVIDIA_DRIVER_CAPABILITIES=all
+          - XAUTHORITY=/tmp/.docker.xauth
+    environment:
+      - PYTHONPATH=/opt/CARLA_ROOT/PythonAPI/carla/dist/carla-0.9.13-py3.7-linux-x86_64.egg:/opt/CARLA_ROOT/PythonAPI/carla/agents:/opt/CARLA_ROOT/PythonAPI/carla
+      - CARLA_ROOT=/opt/CARLA_ROOT
+      - DISPLAY=${DISPLAY}
+      - _NV_PRIME_RENDER_OFFLOAD=1
+      - GLX_VENDOR_LIBRARY_NAME=nvidia
+      - NVIDIA_VISIBLE_DEVICES=all
+      - NVIDIA_DRIVER_CAPABILITIES=compute,utility,video
+      - ROS_MASTER_URI=http://localhost:11311
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix
+      - ~/.Xauthority:/root/.Xauthority
+      - ./autoware_mini/SCENARIO_RUNNER:/opt/SCENARIO_RUNNER
+      - ./autoware_mini/AUTOWARE_MINI:/opt/catkin_ws/src/autoware_mini
+    image: "autoware_mini:latest"
+    container_name: autoware_mini_lofi
+    network_mode: "host"
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - capabilities: [gpu]
+    runtime: nvidia 
+  autoware_mini_hifi:
+    stdin_open: true
+    command:
+      - "bash"
+      - "-c"
+      - >
+        source /opt/catkin_ws/devel/setup.bash &&
+        roslaunch autoware_mini start_carla.launch detector:=lidar_cluster   use_scenario_runner:=true map_name:=Town01
+    build:
+      context: ${PWD}/autoware_mini
+      dockerfile: AUTOWARE_MINI/Dockerfile
+      args: 
+          - PROCESS_COUNT=${PROCESS_COUNT}
+          - DISPLAY=${DISPLAY}
+          - QT_X11_NO_MITSHM=1
+          - NVIDIA_DRIVER_CAPABILITIES=all
+          - XAUTHORITY=/tmp/.docker.xauth
+    environment:
+      - PYTHONPATH=/opt/CARLA_ROOT/PythonAPI/carla/dist/carla-0.9.13-py3.7-linux-x86_64.egg:/opt/CARLA_ROOT/PythonAPI/carla/agents:/opt/CARLA_ROOT/PythonAPI/carla
+      - CARLA_ROOT=/opt/CARLA_ROOT
+      - DISPLAY=${DISPLAY}
+      - _NV_PRIME_RENDER_OFFLOAD=1
+      - GLX_VENDOR_LIBRARY_NAME=nvidia
+      - ROS_MASTER_URI=http://localhost:11312
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix
+      - ~/.Xauthority:/root/.Xauthority
+      - ./autoware_mini/SCENARIO_RUNNER:/opt/SCENARIO_RUNNER
+      - ./autoware_mini/AUTOWARE_MINI:/opt/catkin_ws/src/autoware_mini
+    image: "autoware_mini:latest"
+    container_name: autoware_mini_hifi 
+    network_mode: "host"
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - capabilities: [gpu]
+    runtime: nvidia    
+  opensbt_run:
+    stdin_open: true
+    command: ["bash"]
+    build:
+      context: ${PWD}/Opensbt 
+      dockerfile: Dockerfile
+    environment:
+        - DISPLAY=${DISPLAY}
+        - CARLA_ROOT=/home/carla
+        - SCENARIO_RUNNER_ROOT= /home/scenario_runner
+        - OPENSBT_ROOT=/home/opensbt
+        - PYTHONPATH=${CARLA_ROOT}/PythonAPI/carla/dist/carla-0.9.13-py3.7-linux-x86_64.egg:${CARLA_ROOT}/PythonAPI/carla/agents:${CARLA_ROOT}/PythonAPI/carla:${SCENARIO_RUNNER_ROOT}
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix 
+      - ~/.Xauthority:/root/.Xauthority
+      - ${PWD}/Opensbt/CARLA_ROOT:/home/carla
+      - ${PWD}/Opensbt/SCENARIO_RUNNER_ROOT:/home/scenario_runner
+      - ${PWD}/Opensbt/OPENSBT_ROOT:/home/opensbt 
+      - ${PWD}/Opensbt/OPENSBT_ROOT/results:/home/opensbt/results # mount the results folder to make visible locally
+      - /var/run/docker.sock:/var/run/docker.sock
+    image: opensbt:latest
+    container_name: opensbt
+    network_mode: "host" 
+  carla_sim:
+    stdin_open: true
+    command: ["bash","./CarlaUE4.sh", "-RenderOffScreen", "--world-port=2000"]
+    privileged: true 
+    build:
+      context: ${PWD}/carla
+      dockerfile: Dockerfile
+      args: 
+          - PROCESS_COUNT=${PROCESS_COUNT}
+          - DISPLAY=$DISPLAY
+          - QT_X11_NO_MITSHM=1
+          - NVIDIA_DRIVER_CAPABILITIES=all
+          - XAUTHORITY=/tmp/.docker.xauth
+    ports:
+      - "2000-2002:2000-2002"
+    volumes:
+        - /tmp/.X11-unix:/tmp/.X11-unix
+        - ~/.Xauthority:/root/.Xauthority
+    image: "prathap/carla_sim:v0.9.13"
+    container_name: carla_sim 
+    network_mode: "host"
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]

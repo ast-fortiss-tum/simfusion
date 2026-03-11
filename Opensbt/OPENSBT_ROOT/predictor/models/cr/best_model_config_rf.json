@@ -1,0 +1,18 @@
+{
+  "batch": "data_final",
+  "best_cv_means": {
+    "accuracy": 0.7208374875373879,
+    "balanced_accuracy": 0.698752068029912,
+    "f1": 0.622006558788168,
+    "precision": 0.6463490662055943,
+    "recall": 0.6034782608695652
+  },
+  "best_search_score": 0.622006558788168,
+  "model_params": {
+    "max_depth": null,
+    "min_samples_split": 5,
+    "n_estimators": 300
+  },
+  "model_type": "rf",
+  "refit_metric": "f1"
+}
