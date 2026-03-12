@@ -1,12 +1,8 @@
-# SimFusion
-
 <p align="center">
-  <img src="./figures/simfusion_icon.png" alt="SimFusion Logo" width="150">
+  <img src="./figures/simfusion-icon.png" alt="SimFusion Logo" width="150">
   <h1 align="center">SimFusion</h1>
   <p align="center"><strong>Multi-Fidelity Simulation-based Testing of Automated Driving Systems</strong></p>
 </p>
-
-> **Multi-Fidelity Simulation-based Testing of Automated Driving Systems**
 
 SimFusion is a validation framework for Automated Driving Systems that combines low-fidelity (LoFi) simulation with high-fidelity (HiFi) simulation to efficiently evaluate systems. It uses a trained predictor to orchestrate test execution across simulators of different fidelity levels, reducing overall testing cost while maintaining result quality.
 
@@ -272,7 +268,7 @@ python -m postprocess.run_analysis_diversity_aw
 
 ## Flakiness Analysis
 
-To evaluate simulator flakiness, use the scripts in the [`flaky/`](https://github.com/ast-fortiss-tum/simfusion/tree/main/Opensbt/OPENSBT_ROOT/flaky) folder.
+To evaluate simulator flakiness, use the scripts in the `flaky/` folder.
 
 ---
 
