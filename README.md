@@ -266,7 +266,7 @@ python -m postprocess.run_analysis_diversity_aw
 
 ## Flakiness Analysis
 
-To evaluate simulator flakiness, use the scripts in the `flaky/` folder.
+To evaluate simulator flakiness, use the scripts in the [`flaky/`](https://github.com/ast-fortiss-tum/simfusion/tree/main/Opensbt/OPENSBT_ROOT/flaky) folder.
 
 ---
 
