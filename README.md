@@ -45,6 +45,7 @@ This approach significantly reduces the number of expensive HiFi simulations whi
 ## Installation
 
 SimFusion supports two case studies: **Autoware** and **Frenetix**. The installation for each setup can take up to 1 hour.
+The implementation of SimFusion can be found in this folder:  [/Opensbt/OPENSBT_ROOT](https://github.com/ast-fortiss-tum/simfusion/tree/main/Opensbt/OPENSBT_ROOT)
 
 ### Autoware
 
