@@ -295,4 +295,4 @@ To apply SimFusion to your own system and use case:
 
 ## Supplementary Material
 
-🚧 Will be added soon.
+The supplementary material including study results and further information can be found [here](supplementary/SimFusion_Supplementary_Material.pdf).
