@@ -11,10 +11,10 @@ This folder contains supplementary data including failure discovery over time, f
 </tr>
 <tr>
 <td>
-<img src="img/failure-aw.png"/>
+<img src="img/failure-aw.png" width="340"/>
 </td>
 <td>
-  <img src="img/failure-frenetix.png"/>
+  <img src="img/failure-frenetix.png" width="300"/>
 </td>
 </tr>
 </table>
