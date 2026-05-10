@@ -10,6 +10,15 @@
 
 SimFusion is a validation framework for Automated Driving Systems that combines low-fidelity (LoFi) simulation with high-fidelity (HiFi) simulation to efficiently evaluate systems. It uses a trained predictor to orchestrate test execution across simulators of different fidelity levels, to reduce overall testing cost while maintaining result quality.
 
+## Updates
+
+<div style="background:#fff6d8;border:1px solid #dfc15d;border-left:6px solid #b98c00;border-radius:10px;padding:14px 16px;margin:16px 0;color:#2f2400;line-height:1.6;">
+    <p style="margin:6px 0 10px 0;"><strong>Date:</strong> May 10, 2026</p>
+    <ul>
+        <li><a href="supplementary/README.md" style="color:#005a9e;">Extended supplementary material</a> including visualizations and plots.</li>
+    </ul>
+</div>
+
 ---
 
 ## Table of Contents
