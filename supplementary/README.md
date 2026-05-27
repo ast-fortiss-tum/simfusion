@@ -1,6 +1,10 @@
 # Supplementary Material
 
-This folder contains supplementary data including failure discovery over time, failure cluster plots, visualization of agreements and disagreements between LoFi and HiFi executions. Further data can be found [here](/supplementary/SimFusion_Supplementary_Material.pdf).
+This folder contains supplementary data including classifier information, failure discovery over time, failure cluster plots, visualization of agreements and disagreements between LoFi and HiFi executions. Further data can be found [here](/supplementary/SimFusion_Supplementary_Material.pdf).
+
+## Classifier Data
+
+Agreement/disagreement classifier training information can be found [here](/Opensbt/OPENSBT_ROOT/predictor/models).
 
 ## Failure Discovery
 

@@ -17,6 +17,9 @@ SimFusion is a validation framework for Automated Driving Systems that combines 
     <ul>
         <li><a href="supplementary/README.md" style="color:#005a9e;">Extended supplementary material</a> including visualizations and plots.</li>
     </ul>
+    <ul><li> Predictor config added for both case studies <a href="Opensbt/OPENSBT_ROOT/predictor/models" style="color:#005a9e;">here</a>. The model can be trained with the data provided (trained on the fly).
+    </li>
+    </ul>
 </div>
 
 ---
