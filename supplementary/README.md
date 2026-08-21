@@ -136,7 +136,7 @@ In BNG, the lane-changing vehicle performs a cut-in maneuver and the ego vehicle
 </table>
 
 <p align="center">
-  <a href="scenarios/Planer_DF_executed.xml.xosc">Download Scenario File</a>
+  <a href="scenarios/Planer_DF_executed.xml">Download Scenario File</a>
 </p>
 ---
 
