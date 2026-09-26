@@ -165,7 +165,7 @@ In BNG, the lane-changing vehicle performs a cut-in maneuver and the ego vehicle
 </table>
 
 <p align="center">
-  <a href="scenarios/PedestrianCrossing_1.78592942_4.6553041_11.23898875.xosc">Download Scenario File</a>
+  <a href="scenarios/Planer_DF_executed.xml">Download Scenario File</a>
 </p>
 ---
 
@@ -188,7 +188,7 @@ In BNG, no overtaking occurs and no violation is observed.
 </table>
 
 <p align="center">
-  <a href="scenarios/PedestrianCrossing_1.78592942_4.6553041_11.23898875.xosc">Download Scenario File</a>
+  <a href="scenarios/Planer_DP_executed.xml">Download Scenario File</a>
 </p>
 ---
 
@@ -210,6 +210,6 @@ In CR, the ego vehicle overtakes the blocked vehicle, violating the goal distanc
 </table>
 
 <p align="center">
-  <a href="scenarios/PedestrianCrossing_1.78592942_4.6553041_11.23898875.xosc">Download Scenario File</a>
+  <a href="scenarios/Planer_AF_executed.xml">Download Scenario File</a>
 </p>
 ---
