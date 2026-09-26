@@ -2,6 +2,35 @@
 
 This folder contains supplementary data including classifier information, failure discovery over time, failure cluster plots, visualization of agreements and disagreements between LoFi and HiFi executions. Further data can be found [here](https://anonymous.4open.science/r/simfusion-C957/supplementary/SimFusion_Supplementary_Material.pdf).
 
+## Fitness Distribution
+
+The following histograms compare the fitness values recorded by the LoFi and HiFi simulators for the Autoware case study across 591 paired executions. The fitness functions shown are minimum distance and velocity at minimum distance.
+
+<table>
+<tr>
+<td align="center"><b>Minimum distance</b></td>
+<td align="center"><b>Velocity at minimum distance</b></td>
+</tr>
+<tr>
+<td><img src="fitness_distribution/distr-distance.png" alt="Distribution of minimum-distance fitness values for LoFi and HiFi"/></td>
+<td><img src="fitness_distribution/distr-velocity.png" alt="Distribution of velocity-at-minimum-distance fitness values for LoFi and HiFi"/></td>
+</tr>
+</table>
+
+The scatter plots below show the paired fitness differences for minimum distance, calculated as HiFi minus LoFi. Results are shown separately for AF (Agreement Fail) and AP (Agreement Pass).
+
+<table>
+<tr>
+<td align="center"><b>AF — Agreement Fail</b></td>
+<td align="center"><b>AP — Agreement Pass</b></td>
+</tr>
+<tr>
+<td><img src="fitness_distribution/af-dist-diff.png" alt="Paired minimum-distance fitness differences for Agreement Fail executions"/></td>
+<td><img src="fitness_distribution/ap-dist-diff.png" alt="Paired minimum-distance fitness differences for Agreement Pass executions"/></td>
+</tr>
+</table>
+
+
 ## Classifier Data
 
 Agreement/disagreement classifier training information can be found [here](https://anonymous.4open.science/r/simfusion-C957/Opensbt/OPENSBT_ROOT/predictor/models/cr/best_model_config_rf.json).
