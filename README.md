@@ -307,4 +307,22 @@ To apply SimFusion to your own system and use case:
 
 ## Supplementary Material
 
-The supplementary material including study results and further information can be found [here](supplementary/SimFusion_Supplementary_Material.pdf).
+The supplementary material, including study results and further information, can be found [here](supplementary/SimFusion_Supplementary_Material.pdf).
+
+## Citation
+
+If you use our work in your research, if you extend it, or if you simply like it, please cite it in your publications. 
+
+Here is an example BibTeX entry:
+
+```
+@inproceedings{2027-Sorokin-ICSE,
+  author = {Sorokin, Lev and Dinler, Berfin and Gambi, Alessio and Stocco, Andrea},
+  title = {{SimFusion}: Multi-Fidelity Simulation-based Testing of Automated Driving Systems},
+  booktitle = {Proceedings of the 49th IEEE/ACM International Conference on Software Engineering (ICSE)},
+  year = {2027},
+  series = {ICSE '27},
+  publisher = {ACM/IEEE},
+  pages = {12 pages},
+}
+```
